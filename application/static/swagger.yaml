@@ -1,0 +1,43 @@
+swagger: '2.0'
+info:
+  title: "Library API"
+  description: "This is a API to manage a Library"
+  version: "1.0.0"
+host: "127.0.0.1:5000"
+schemes:
+  - "http"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+#Our Endpoints
+paths:
+  /members/login:
+    post:
+			tags:
+				- members
+      summary: "Login endpoint, (generates token)"
+      description: "Validates member credentials, generates and return a member specific token."
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Login Credentials"
+          required: true
+          schema:
+            $ref: "#/definitions/LoginCredentials"
+      responses:
+        200:
+          description: "Login successful"
+          schema:
+            $ref: "#/definitions/LoginResponse"
+          examples:
+            application/json:
+              
+                token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNTYyNzY0MDEyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+                message: "Login successful"
+                status: "success"
+              
+
+  ## rest of code
+  
