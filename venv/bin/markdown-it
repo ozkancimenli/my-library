@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/Users/ozkancimenli/Desktop/course/19 - Project Planning and Database Design/Lesson 6 - Rate Limiting and Caching/my-library/venv/bin/python" "$0" "$@"
+'''exec' "/Users/ozkancimenli/Desktop/course/20 - Preparing and Publishing Your APIs/Lesson 1 - API Documentation/my-library/venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re

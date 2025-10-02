@@ -29,10 +29,10 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV '/Users/ozkancimenli/Desktop/course/19 - Project Planning and Database Design/Lesson 6 - Rate Limiting and Caching/my-library/venv'
+set -gx VIRTUAL_ENV "/Users/ozkancimenli/Desktop/course/20 - Preparing and Publishing Your APIs/Lesson 1 - API Documentation/my-library/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
-set -gx PATH "$VIRTUAL_ENV/"bin $PATH
+set -gx PATH "$VIRTUAL_ENV/bin" $PATH
 
 # Unset PYTHONHOME if set.
 if set -q PYTHONHOME
@@ -52,7 +52,7 @@ if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
         set -l old_status $status
 
         # Output the venv prompt; color taken from the blue of the Python logo.
-        printf "%s%s%s" (set_color 4B8BBE) '(venv) ' (set_color normal)
+        printf "%s%s%s" (set_color 4B8BBE) "(venv) " (set_color normal)
 
         # Restore the return status of the previous command.
         echo "exit $old_status" | .
