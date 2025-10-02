@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "48910422-269970ff-bc67-4897-87ba-70b72f4448eb",
+		"name": "My-Library",
+		"description": "Postman collection for My Library project (Lesson 8 endpoints included)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Members",
+			"item": [
+				{
+					"name": "Create Member",
+					"id": "48910422-bde30a5e-419c-4b9a-80b7-4e87d5d256cf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Ozkan\",\n  \"email\": \"ozkan3@example.com\",\n  \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/members",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Member",
+					"id": "48910422-315d6e23-ef3e-4b96-8682-d2494bcdee75",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"ozkan@example.com\",\n  \"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/members/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"members",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Members (Pagination)",
+					"id": "48910422-d69298f2-5729-409d-b0ed-749d6db1b36b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/members?limit=5&offset=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Member",
+					"id": "48910422-f8492433-400c-4c5c-a066-acb4c4a07d8c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/members/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"members",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Own Member",
+					"id": "48910422-c938dd2d-d382-4041-9b14-6a20d8032005",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/members/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"members",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "48910422-e51ae188-9825-4d0d-9bba-2997c2110df9"
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Create Book",
+					"id": "48910422-ff3fd2e7-96d6-486b-865f-8b2e16b7a69a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"1984\",\n  \"author\": \"George Orwell\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/books",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Books",
+					"id": "48910422-993e0eb0-a956-4bf4-ad11-85682b9b0b2e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Books",
+					"id": "48910422-6ee0d768-53da-423f-9b76-8c13e25bfd4c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books/search?title=1984",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"search"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "1984"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Popular Books",
+					"id": "48910422-bc7e86af-73dd-49fd-87f3-46a6ce432abf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books/popular",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"popular"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "48910422-662a6b48-40d8-44e5-98b7-b012826b58eb"
+		},
+		{
+			"name": "Loans",
+			"item": [
+				{
+					"name": "Create Loan",
+					"id": "48910422-3ebbdb68-9606-4f5e-b032-dbb92b9e70be",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"member_id\": 1,\n  \"book_id\": 1\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/loans",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Loans",
+					"id": "48910422-a0816cae-652a-488a-b9d4-cd76e7cee53e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/loans",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Loan (Add/Remove Books)",
+					"id": "48910422-241e490a-01fb-4aa9-a184-0e389f400ed5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"add_ids\": [2,3],\n  \"remove_ids\": [1]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/loans/1/edit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"loans",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "48910422-8fa43a5e-3036-42a3-84c4-6ffa828499a4"
+		},
+		{
+			"name": "Health Check",
+			"id": "48910422-a195997c-6001-4e33-8126-6f3a9a958c2b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/health",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:5000"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
